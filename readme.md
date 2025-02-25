@@ -1,10 +1,76 @@
+# GitHub Actions Security Scanner
 
-# Github Actions Security Scanner
+GitHub is a central hub for software developers to collaborate on projects. While tools like GitHub Actions (GHA) automate testing and deployment, they also introduce potential security risks. Malicious exploitation of GitHub Actions can lead to unauthorized access, data manipulation, and execution of harmful scripts within repositories.
 
-GitHub has always been the hub for software developers to collaborate with other developers on a project. There have been several tools developed for GitHub to efficiently manage code produced by users around the globe. GitHub Action is one such tool that can automate, test, and deploy contributors’ changes while ensuring that it is reliable and efficient at the same time. This automation, while immensely beneficial, has also opened avenues for potential threats.
-GitHub Actions (GHA), introduced in 2019, serves as a Continuous Integration tool, automating tasks in the software development life cycle. Components include workflows, events, jobs, steps, actions, and runners. GHA are automated workflows that allow you to define custom CI/CD processes directly within your GitHub repository, unwittingly exposing vulnerabilities. Malicious usage of these actions has become a major concern, with instances of harmful code execution compromising the security of users and their repositories. Exploits targeting GitHub Actions can lead to significant vulnerabilities, posing risks to the integrity of software development workflows.
-Malicious users further compromise GitHub Actions by inserting unauthorized commands, running arbitrary scripts, or creating seemingly legitimate actions that trigger harmful activities. These actions may result in unauthorized access, data manipulation, or the introduction of malicious payloads into repositories.
-The goal of our project lies in addressing this critical issue. We are dedicated to creating a robust tool designed to scan GitHub Actions files comprehensively. The primary objective is to enable users to easily detect malicious behavior by identifying suspicious patterns within these automated workflow files (aka .yml files) instead of having them check every file manually by themselves.
-Our tool contains three critical phases. Firstly, we delve into understanding YAML files, fundamental for interpreting GitHub Action workflows. Secondly, we meticulously compile a malicious command database, encompassing potential threats and harmful commands. Finally, we develop a rule-based engine forming the core of our tool. This engine systematically scans GitHub Action YAML files, rating them on a scale of 1 to 5 based on their potential maliciousness.
-By doing so, our project aims to elevate the security posture of GitHub Actions, securing the collaborative coding environment against these potential threats and ensuring the safe and efficient delivery of software. Users can now scan GitHub Actions before implementation, assessing security implications and potential risks associated with a particular workflow. Through this project, we contribute to creating a secure GitHub ecosystem, enabling developers to leverage the power of GitHub Actions without compromising the integrity and security of their projects.
- 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Security Risks in GitHub Actions](#security-risks-in-github-actions)
+- [Project Goal](#project-goal)
+- [How It Works](#how-it-works)
+  - [1. Understanding YAML Files](#1-understanding-yaml-files)
+  - [2. Malicious Command Database](#2-malicious-command-database)
+  - [3. Rule-Based Engine](#3-rule-based-engine)
+- [Benefits](#benefits)
+- [Conclusion](#conclusion)
+
+## Introduction
+
+GitHub Actions (introduced in 2019) is a powerful Continuous Integration (CI) tool that automates tasks within the software development lifecycle. It consists of:
+
+- **Workflows** – Automated processes defined in `.yml` files.
+- **Events** – Triggers that start workflows.
+- **Jobs** – Units of work within a workflow.
+- **Steps** – Individual tasks inside a job.
+- **Actions** – Reusable components within workflows.
+- **Runners** – Environments executing workflows.
+
+However, this automation can be exploited by attackers inserting unauthorized commands, running arbitrary scripts, or creating seemingly legitimate actions that trigger harmful activities.
+
+## Security Risks in GitHub Actions
+
+- **Unauthorized access** – Attackers may gain control over repositories.
+- **Data manipulation** – Malicious workflows can modify sensitive data.
+- **Code injection** – Arbitrary scripts can be executed within workflows.
+- **Supply chain attacks** – Compromised dependencies can introduce vulnerabilities.
+
+## Project Goal
+
+Our project aims to enhance the security of GitHub Actions by developing a **robust scanning tool** that detects malicious behavior in workflow files. Instead of manually checking `.yml` files, users can leverage our tool to **identify suspicious patterns and assess security risks efficiently**.
+
+## How It Works
+
+Our tool operates in three critical phases:
+
+### 1. Understanding YAML Files
+
+- Parses GitHub Action YAML files to analyze workflow configurations.
+- Extracts key elements such as jobs, steps, and executed commands.
+
+### 2. Malicious Command Database
+
+- Maintains a repository of known harmful commands and attack patterns.
+- Continuously updates to include emerging security threats.
+
+### 3. Rule-Based Engine
+
+- Scans GitHub Action YAML files systematically.
+- Rates files on a **1 to 5** scale based on potential maliciousness.
+- Flags suspicious activities for further review.
+
+## Benefits
+
+✅ **Enhanced Security** – Prevents unauthorized modifications in workflows.  
+✅ **Automated Scanning** – Reduces manual effort in reviewing YAML files.  
+✅ **Risk Assessment** – Provides clear security ratings for workflows.  
+✅ **Continuous Protection** – Regular updates against evolving threats.
+
+## Conclusion
+
+By integrating our GitHub Actions Security Scanner, developers can **safeguard their CI/CD workflows** against malicious threats. This project contributes to a more secure GitHub ecosystem, enabling safe and efficient software delivery while leveraging the power of automation.
+
+---
+
+🚀 **Stay secure and automate with confidence!**
+
+
